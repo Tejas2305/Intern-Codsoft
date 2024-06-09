@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    margin-right: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(136, 136, 136, 0.1);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(241, 241, 241, 0);
+}
+
+/* Firefox */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(136, 136, 136, 0.1) rgba(241, 241, 241, 0);
+}
+
+/* Edge and IE */
+body::-ms-scrollbar {
+    width: 10px;
+}
+
+body::-ms-scrollbar-thumb {
+    background-color: rgba(136, 136, 136, 0.1);
+    border-radius: 6px;
+}
+
+body::-ms-scrollbar-track {
+    background-color: rgba(241, 241, 241, 0);
+}
+
+:root {
+    --delay: 0s;
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #252954;
+    color: #9b9ca7;
+}
+
+/* Wrapper */
+.wrapper {
+    min-width: 100%;
+    background-color: #0e0e23;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 50px;
+    padding-top: 0;
+    overflow: auto;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+/* Header */
+.header {
+    background: #141834;
+    background: radial-gradient(circle, #141834 0%, #13162f 100%);
+    box-shadow: 0 16px 12px #0e0e23;
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    font-size: 15px;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.header:before {
+    content: "";
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    background-color: #0e0e23;
+}
+
+.header-link {
+    color: #9b9ca7;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.header-link svg {
+    width: 20px;
+    margin-right: 14px;
+}
+
+.header-link.active,
+.header-link:hover {
+    background: #11132c;
+    border-bottom: 3px solid #4255d4;
+}
+
+.logo {
+    padding: 20px 50px 20px 50px;
+    font-size: 16px;
+    color: #e7e8ea;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-det {
+    margin-top: 5px;
+    background: #4255d4;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* User Info */
+.user-info:hover .logout-button {
+    display: block;
+}
+
+.user-info {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.user-info svg {
+    width: 20px;
+}
+
+.user-info .profile {
+    margin: 0 20px 0 12px;
+    width: 18px;
+}
+
+/* User Box */
+.user-box {
+    margin-top: 25px;
+    margin-left: 25px;
+    display: flex;
+}
+
+.user-box+.user-box {
+    margin-top: 20px;
+}
+
+.user-box+.user-box .cards-wrapper {
+    margin-left: 0;
+    flex-grow: 1;
+    max-width: none;
+}
+
+.user-box+.user-box .today {
+    margin-left: 30px;
+}
+
+.user-box+.user-box .cards-header {
+    padding: 20px 30px;
+    justify-content: space-between;
+}
+
+.user-box .cards-header,
+.user-box .cards-view {
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+}
+
+.user-box .cards-header svg,
+.user-box .cards-view svg {
+    width: 24px;
+}
+
+.user-box .cards-header .title,
+.user-box .cards-view .title {
+    margin: 0 16px;
+    font-size: 15px;
+    align-items: center;
+    align-content: center;
+}
+
+.user-box .cards-header-date svg,
+.user-box .cards-view-date svg {
+    width: 30px;
+}
+
+.user-box .cards-header .cards-button,
+.user-box .cards-view .cards-button {
+    background: #15193c;
+    padding: 10px 16px;
+    margin-right: 0;
+}
+
+.user-box .cards-header .cards-button svg,
+.user-box .cards-view .cards-button svg {
+    width: 16px;
+    margin: 0 2px 0 0;
+}
+
+.user-box .cards-header .date-wrapper,
+.user-box .cards-view .date-wrapper {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.user-box .cards-header .date-wrapper .title,
+.user-box .cards-view .date-wrapper .title {
+    margin: 0 16px;
+}
+
+.user-box>* {
+    -webkit-animation: top 1s var(--delay) both;
+    animation: top 1s var(--delay) both;
+}
+
+.user-box .field {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.user-box .field input {
+    margin-left: 20px;
+    border: none;
+}
+
+.user-box {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+}
+
+.user-box .field {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.user-box .field label {
+    margin-right: 20px;
+    width: 150px;
+}
+
+.user-box .field input,
+.user-box .field select,
+.user-box .field textarea {
+    flex: 1;
+    border: none;
+    width: 0 !important;
+}
+
+.user-box h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Responsive */
+@media screen and (max-width: 710px) {
+    .user-box {
+        width: 90% !important;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .user-info {
+        margin-left: 0px;
+    }
+
+    .user-info .profile {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+
+    .user-info .button,
+    .user-info .hour {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .first-box .account-wrapper {
+        width: 100%;
+    }
+
+    .first-box .cards-wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .wrapper {
+        max-width: 1200px;
+    }
+
+    .first-box {
+        flex-wrap: wrap;
+    }
+
+    .activity {
+        width: 49%;
+        max-width: none;
+    }
+
+    .first-box .cards-wrapper {
+        width: 67%;
+        max-width: none;
+        margin: 20px 0;
+    }
+
+    .first-box .cards-wrapper .item.is-active {
+        background: none;
+        color: inherit;
+    }
+
+    .first-box .account-wrapper {
+        max-width: none;
+        width: calc(33% - 20px);
+        margin: 20px 0 20px 20px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .main-container {
+        padding-left: 10px;
+    }
+}
+
+.activity {
+    max-width: 480px;
+}
+
+.activity {
+    max-width: none !important;
+    width: 50% !important;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.card {
+    background: #1a2049;
+    background: radial-gradient(circle, #1a2049 0%, #13162f 100%);
+    padding: 40px 30px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    width: 50% !important;
+    height: auto !important;
+}
+
+.card .title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card .subtitle {
+    font-size: 13px;
+    line-height: 1.6em;
+}
+
+.card+.card {
+    margin-left: 20px;
+}
+
+.cards.card {
+    border-radius: 0 0 6px 6px;
+    padding: 30px 20px;
+}
+
+.cards.card svg {
+    width: 24px;
+    margin-left: auto;
+    color: #818394;
+}

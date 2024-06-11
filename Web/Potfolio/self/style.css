@@ -427,15 +427,14 @@ body {
 }
 .user-box.first-box.activity.card.about .content-wrapper {
     display: grid;
-    grid-template-columns: 1fr auto; /* 1fr for text, auto for image */
+    grid-template-columns: 1fr auto;
     align-items: center;
-    gap: 20px; /* Adjust this value to add spacing between text and image */
-}
+    gap: 20px;
 
 
 
 .user-box.first-box.activity.card.about .profile-image {
-    width: 18vw; /* Adjust this value to control the image size */
+    width: 18vw;
     height: 25vw;
-    border-radius: 25px; /* Optional: this makes the image circular */
+    border-radius: 25px;
 }

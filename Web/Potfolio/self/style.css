@@ -440,3 +440,74 @@ body {
     height: 25vw;
     border-radius: 25px;
 }
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 100px;
+}
+
+.project-card {
+    height: 400px;
+    position: relative;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.project-content {
+    position: relative;
+    padding: 40px;
+    color: #fff;
+    transition: .5s;
+    opacity: 0;
+}
+
+.project-title {
+    font-size: 50px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 300;
+}
+
+.project-info {
+    margin: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.project-btn-grp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.project-btn {
+    height: 40px;
+    text-transform: capitalize;
+    font-size: 18px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.project-btn.live {
+    background: none;
+    border: 2px solid #fff;
+}
+
+.project-card:hover .project-img {
+    filter: blur(20px);
+}
+
+.project-card:hover .project-content {
+    opacity: 1;
+}

@@ -420,18 +420,20 @@ body {
     display: inline;
 }
 
-.typing-container #typed-text ,.typed-cursor{
+.typing-container #typed-text,
+.typed-cursor {
     display: inline;
     color: crimson;
     font-size: 1.5em;
 }
+
 .user-box.first-box.activity.card.about .content-wrapper {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
     gap: 20px;
 
-
+}
 
 .user-box.first-box.activity.card.about .profile-image {
     width: 18vw;

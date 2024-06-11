@@ -1,70 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<style>
-   /* Ensure your .about class is not being overridden */
-   .user-box.first-box.activity.card.about .content-wrapper {
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #000;
+        }
+ */
+
+
+
+
+.project-container {
     display: grid;
-    grid-template-columns: 1fr auto; /* 1fr for text, auto for image */
-    align-items: center;
-    gap: 20px; /* Adjust this value to add spacing between text and image */
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 100px;
 }
 
-
-
-.user-box.first-box.activity.card.about .profile-image {
-    width: 150px; /* Adjust this value to control the image size */
-    height: auto;
-    border-radius: 50%; /* Optional: this makes the image circular */
+.project-card {
+    height: 400px;
+    position: relative;
 }
 
+.project-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: .5s;
+}
 
+.project-content {
+    position: relative;
+    padding: 40px;
+    color: #fff;
+    transition: .5s;
+    opacity: 0;
+}
 
-</style>
+.project-title {
+    font-size: 50px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 300;
+}
+
+.project-info {
+    margin: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.project-btn-grp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.project-btn {
+    height: 40px;
+    text-transform: capitalize;
+    font-size: 18px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.project-btn.live {
+    background: none;
+    border: 2px solid #fff;
+}
+
+.project-card:hover .project-img {
+    filter: blur(20px);
+}
+
+.project-card:hover .project-content {
+    opacity: 1;
+}
+    </style>
 </head>
-
-<body class="wrapper">
-    <div class="main-container">
-
-
-        <div class="user-box first-box activity card about">
-            <div class="content-wrapper">
-                <div class="text-content">
-                    <div class="typing-container">
-                        <h1 class="static-text">Hello, I Am Tejas<br>I am a </h1>
-                        <h2 class="static-text" id="typed-text"></h2>
+<body>
+    
+    <project id="Project">
+        <section class="project-section active">
+            <h1 class="project-heading">some of my projects</h1>
+            <div class="project-container">
+                <div class="project-card">
+                    <img src="img/project-1.png" class="project-img" alt="">
+                    <div class="project-content">
+                        <h1 class="project-title">project 01</h1>
+                        <p class="project-info">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae delectus cumque
+                            repudiandae aliquam optio accusamus natus nobis! Nam, sunt?
+                        </p>
+                        <div class="project-btn-grp">
+                            <button class="project-btn github">github repo</button>
+                            <button class="project-btn live">see live</button>
+                        </div>
                     </div>
-                    <p>I'm a passionate web developer with a strong background in front-end development. I love creating
-                        engaging and user-friendly websites that leave a lasting impression. With expertise in HTML, CSS,
-                        JavaScript, and various web frameworks, I strive to deliver high-quality solutions that meet client
-                        needs and exceed expectations.</p>
-                    <p>Aside from coding, I enjoy traveling, photography, and spending time with my family.</p>
                 </div>
-                <img src="tejas.jpg" alt="Tejas" class="profile-image"/>
+                <div class="project-card">
+                    <img src="img/project-2.png" class="project-img" alt="">
+                    <div class="project-content">
+                        <h1 class="project-title">project 02</h1>
+                        <p class="project-info">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae delectus cumque
+                            repudiandae aliquam optio accusamus natus nobis! Nam, sunt?
+                        </p>
+                        <div class="project-btn-grp">
+                            <button class="project-btn github">github repo</button>
+                            <button class="project-btn live">see live</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-    </div>
+        </section>
+    </project>
 </body>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-            var options = {
-                strings: ["Developer",  "Student", "Designer","GDSC Member"],
-                typeSpeed: 80,
-                backSpeed: 80,
-                backDelay: 1000,
-                loop: true
-            };
-
-            var typed = new Typed("#typed-text", options);
-        });
-</script>
 </html>

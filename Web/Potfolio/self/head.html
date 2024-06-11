@@ -4,52 +4,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 </head>
 
 <body class="wrapper">
     <div class="main-container">
         <div class="header">
             <div class="logo">Gpp Hostel
-                <span class=logo-det># Boys</span>
+                <span class="logo-det"># Boys</span>
             </div>
-            <a class="header-link active" href="#">
-                Dashboard
-            </a>
-            <a class="header-link" href="#">
-                Home
-            </a>
-            <a class="header-link" href="#">
-                About us
-            </a>
-            <a class="header-link" href="#">
-                Committee
-            </a>
+            <a class="header-link active" href="#">Dashboard</a>
+            <a class="header-link" href="#">Home</a>
+            <a class="header-link" href="#">About us</a>
+            <a class="header-link" href="#">Committee</a>
             <div class="user-info">
                 <div class="a">
                     <div class="b">
                         <div class="user-name">Mike J</div>
-                        
                     </div>
-                    <div class="log_out">
-                        Log Out
-                    </div>
+                    <div class="log_out">Log Out</div>
                 </div>
                 <div class="hour">08.20 pm</div>
             </div>
         </div>
-        <div class="user-box first-box activity card" >
 
-            <h1>Week Schedule</h1>
-
-           
-        
+        <!-- Portfolio Section -->
+ 
+        <!-- About Section -->
+        <div class="user-box first-box activity card about">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <div class="typing-container">
+                        <h1 class="static-text">Hello, I Am Tejas<br>I am a </h1>
+                        <h2 class="static-text" id="typed-text"></h2>
+                    </div>
+                    <p>I'm a passionate web developer with a strong background in front-end development. I love creating
+                        engaging and user-friendly websites that leave a lasting impression. With expertise in HTML, CSS,
+                        JavaScript, and various web frameworks, I strive to deliver high-quality solutions that meet client
+                        needs and exceed expectations.</p>
+                    <p>Aside from coding, I enjoy traveling, photography, and spending time with my family.</p>
+                </div>
+                <img src="tejas.jpg" alt="Tejas" class="profile-image"/>
+            </div>
         </div>
-        <!--------------------------------------------------------------------------------------->
-       
+
+        <!-- Projects Section -->
+        <div class="user-box first-box activity card">
+            <h1>Projects</h1>
+            <div class="project">
+                <h2>Portfolio Website</h2>
+                <p>A responsive portfolio website showcasing my skills, projects, and contact information.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project">
+                <h2>E-commerce Platform</h2>
+                <p>An online store built with React.js and Node.js, featuring user authentication, product browsing, and
+                    checkout functionality.</p>
+                <a href="#">View Project</a>
+            </div>
+            <!-- Add more project entries as needed -->
+        </div>
+
+
+        <!-- Contact Section -->
+        <div class="user-box first-box activity card">
+            <h1>Contact Me</h1>
+            <iframe webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" scrolling="no"
+                src="https://forms.visme.co/formsPlayer/_embed/rx9w4xxo-contact-us?embedIframeId=1" title="Contact us"
+                loading="lazy" class="vismeForms"
+                style="border: none; max-width: 100%; display: flex; justify-content: center; align-items: center; min-height: 507.808px;"></iframe>
+            <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+
+        </div>
+    </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+            var options = {
+                strings: ["Developer",  "Student", "Designer","GDSC Member"],
+                typeSpeed: 80,
+                backSpeed: 80,
+                backDelay: 1000,
+                loop: true
+            };
 
-
+            var typed = new Typed("#typed-text", options);
+        });
+</script>
 </html>

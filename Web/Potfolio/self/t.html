@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+   /* Ensure your .about class is not being overridden */
+   .user-box.first-box.activity.card.about .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto; /* 1fr for text, auto for image */
+    align-items: center;
+    gap: 20px; /* Adjust this value to add spacing between text and image */
+}
+
+
+
+.user-box.first-box.activity.card.about .profile-image {
+    width: 150px; /* Adjust this value to control the image size */
+    height: auto;
+    border-radius: 50%; /* Optional: this makes the image circular */
+}
+
+
+
+</style>
+</head>
+
+<body class="wrapper">
+    <div class="main-container">
+
+
+        <div class="user-box first-box activity card about">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <div class="typing-container">
+                        <h1 class="static-text">Hello, I Am Tejas<br>I am a </h1>
+                        <h2 class="static-text" id="typed-text"></h2>
+                    </div>
+                    <p>I'm a passionate web developer with a strong background in front-end development. I love creating
+                        engaging and user-friendly websites that leave a lasting impression. With expertise in HTML, CSS,
+                        JavaScript, and various web frameworks, I strive to deliver high-quality solutions that meet client
+                        needs and exceed expectations.</p>
+                    <p>Aside from coding, I enjoy traveling, photography, and spending time with my family.</p>
+                </div>
+                <img src="tejas.jpg" alt="Tejas" class="profile-image"/>
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+            var options = {
+                strings: ["Developer",  "Student", "Designer","GDSC Member"],
+                typeSpeed: 80,
+                backSpeed: 80,
+                backDelay: 1000,
+                loop: true
+            };
+
+            var typed = new Typed("#typed-text", options);
+        });
+</script>
+</html>

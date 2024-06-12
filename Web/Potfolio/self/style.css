@@ -390,7 +390,7 @@ body {
 }
 
 .card .title {
-    font-size: 16px;
+    font-size: 1.8rem;
     font-weight: 500;
 }
 
@@ -440,10 +440,12 @@ body {
     height: 25vw;
     border-radius: 25px;
 }
+
 .project-container {
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 100px;
+    margin-top: 20px;
 }
 
 .project-card {
@@ -494,9 +496,10 @@ body {
     text-transform: capitalize;
     font-size: 18px;
     border: none;
-    background: #000;
+    background: radial-gradient(circle, #0d1120 0%, #0b0e1a 50%, #070813 100%);
     color: #fff;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .project-btn.live {
@@ -510,4 +513,63 @@ body {
 
 .project-card:hover .project-content {
     opacity: 1;
+}
+
+.parent-skill {
+    width: 200px;
+    height: auto;
+    margin-bottom: 30px;
+    /* Adjust as needed */
+}
+
+.skill {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    box-shadow: 10px 10px 19px rgba(14, 14, 35, 0.7), -10px -10px 19px rgba(14, 14, 35, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress {
+    width: 97%;
+    height: 97%;
+    border-radius: 100%;
+    background: radial-gradient(circle, #141834 0%, #13162f 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-number {
+    font-family: 'Poppins', sans-serif;
+    color: #f9004d;
+    font-size: 2rem;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    color: #f9004d;
+    font-size: 4rem;
+    /* Adjust size as needed */
+    display: block;
+    text-align: center;
+    margin-top: 35px;
+    /* Adjust spacing as needed */
+
+}
+
+.s_con {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
 }

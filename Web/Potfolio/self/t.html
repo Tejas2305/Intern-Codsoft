@@ -7,121 +7,170 @@
     <title>Document</title>
     <style>
         body {
-            background-color: #000;
+            background: radial-gradient(circle, #1a2049 0%, #13162f 100%);
         }
 
+        .skill-section {
+    position: relative;
+    margin: 100px 0;
+}
 
+.heading {
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 300;
+    margin-bottom: 100px;
+}
 
+.skills-container {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 100px;
+    color: #fff;
+}
 
+.skill-card {
+    position: relative;
+}
 
-        .project-container {
-            display: grid;
-            grid-template-columns: repeat(2, 2fr);
-            grid-gap: 100px;
-        }
+.skill-img {
+    display: block;
+    margin: auto;
+    height: 200px;
+}
 
-        .project-card {
-            height: 400px;
-            position: relative;
-        }
+.skill-name {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 30px 0 20px;
+}
 
-        .project-img {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            object-fit: cover;
-            transition: .5s;
-        }
+.skill-info {
+    text-align: center;
+    opacity: 0.5;
+    font-size: 18px;
+    line-height: 30px;
+}
 
-        .project-content {
-            position: relative;
-            padding: 40px;
-            color: #fff;
-            transition: .5s;
-            opacity: 0;
-        }
+.skill-level {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border-radius: 50%;
+    border: 10px solid;
+}
 
-        .project-title {
-            font-size: 50px;
-            text-transform: capitalize;
-            text-align: center;
-            font-weight: 300;
-        }
+.skill-card:nth-child(1) .skill-level {
+    background: #ff4f4f28;
+    border-color: #ff4f4f;
+    color: #ff4f4f;
+}
 
-        .project-info {
-            margin: 40px;
-            font-size: 20px;
-            line-height: 30px;
-            text-align: center;
-        }
+.skill-card:nth-child(2) .skill-level {
+    background: #4fa0ff28;
+    border-color: #4fa0ff;
+    color: #4fa0ff;
+}
 
-        .project-btn-grp {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-        }
+.skill-card:nth-child(3) .skill-level {
+    background: #ffed4f28;
+    border-color: #ffed4f;
+    color: #ffed4f;
+}
 
-        .project-btn {
-            height: 40px;
-            text-transform: capitalize;
-            font-size: 18px;
-            border: none;
-            background: #000;
-            color: #fff;
-            cursor: pointer;
-        }
+.skill-card:nth-child(4) .skill-level {
+    background: #52ff4f28;
+    border-color: #52ff4f;
+    color: #52ff4f;
+}
 
-        .project-btn.live {
-            background: none;
-            border: 2px solid #fff;
-        }
+.skill-card:nth-child(5) .skill-level {
+    background: #4fdfff28;
+    border-color: #4fdfff;
+    color: #4fdfff;
+}
 
-        .project-card:hover .project-img {
-            filter: blur(20px);
-        }
+.skill-card:nth-child(6) .skill-level {
+    background: #ff4f4f28;
+    border-color: #ff4f4f;
+    color: #ff4f4f;
+}
 
-        .project-card:hover .project-content {
-            opacity: 1;
-        }
+.skill-card:nth-child(7) .skill-level {
+    background: #4fa0ff28;
+    border-color: #4fa0ff;
+    color: #4fa0ff;
+}
+
+.skill-card:nth-child(8) .skill-level {
+    background: #ffed4f28;
+    border-color: #ffed4f;
+    color: #ffed4f;
+}
+
+.skill-card:nth-child(9) .skill-level {
+    background: #52ff4f28;
+    border-color: #52ff4f;
+    color: #52ff4f;
+}
+
+.skill-card:nth-child(10) .skill-level {
+    background: #4fdfff28;
+    border-color: #4fdfff;
+    color: #4fdfff;
+}
+
     </style>
 </head>
 
 <body>
 
-    <div class="project-section active">
-        <div class="project-container">
-            <div class="project-card">
-                <img src="img/project-1.png" class="project-img" alt="">
-                <div class="project-content">
-                    <h1 class="project-title">project 01</h1>
-                    <p class="project-info">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae delectus cumque
-                        repudiandae aliquam optio accusamus natus nobis! Nam, sunt?
+
+        <div class="skill-section">
+            <h1 class="heading">skills</h1>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <img src="img/lang/html.png" class="skill-img" alt="HTML img">
+                    <div class="skill-level">100%</div>
+                    <h1 class="skill-name">HTML</h1>
+                    <p class="skill-info">
+                        I possess a profound understanding of HTML coding and excel in its implementation, ensuring
+                        efficient and effective web development for my projects.
                     </p>
-                    <div class="project-btn-grp">
-                        <button class="project-btn github">github repo</button>
-                        <button class="project-btn live">see live</button>
-                    </div>
+                </div>
+                <div class="skill-card">
+                    <img src="img/lang/css.png" class="skill-img" alt="CSS img">
+                    <div class="skill-level">70%</div>
+                    <h1 class="skill-name">CSS</h1>
+                    <p class="skill-info">
+                        I possess a solid grasp of CSS techniques and excel in crafting efficient HTML code. With a keen
+                        eye for design and functionality, I ensure your website stands out with visually appealing
+                        layouts and seamless user experience.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <img src="img/lang/js.png" class="skill-img" alt="JS img">
+                    <div class="skill-level">50%</div>
+                    <h1 class="skill-name">JS</h1>
+                    <p class="skill-info">
+                        I possess a fundamental understanding of JavaScript and demonstrate proficiency in crafting HTML
+                        code with efficiency
+                    </p>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="img/project-2.png" class="project-img" alt="">
-                <div class="project-content">
-                    <h1 class="project-title">project 02</h1>
-                    <p class="project-info">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae delectus cumque
-                        repudiandae aliquam optio accusamus natus nobis! Nam, sunt?
-                    </p>
-                    <div class="project-btn-grp">
-                        <button class="project-btn github">github repo</button>
-                        <button class="project-btn live">see live</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 </body>
 

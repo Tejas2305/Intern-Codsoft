@@ -90,11 +90,11 @@ body {
     background: radial-gradient(circle, #141834 0%, #13162f 100%);
     box-shadow: 0 16px 12px #0e0e23;
     width: 100%;
-    padding: 0 30px;
+    padding: 0 50px;
     display: flex;
     align-items: center;
     border-radius: 6px;
-    font-size: 15px;
+    font-size: 20px;
     white-space: nowrap;
     position: sticky;
     top: 0;
@@ -118,6 +118,7 @@ body {
     display: flex;
     align-items: center;
     padding: 20px;
+    padding-bottom: 25px;
     transition: 0.3s;
     border-bottom: 3px solid transparent;
     transition: 0.3s;
@@ -136,10 +137,11 @@ body {
 
 .logo {
     padding: 20px 50px 20px 50px;
-    font-size: 16px;
+    font-size: 30px;
     color: #e7e8ea;
     display: flex;
     flex-direction: column;
+    font-weight: 500;
 }
 
 .logo-det {
@@ -427,7 +429,7 @@ body {
     font-size: 1.5em;
 }
 
-.user-box.first-box.activity.card.about .content-wrapper {
+.content-wrapper {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -435,7 +437,7 @@ body {
 
 }
 
-.user-box.first-box.activity.card.about .profile-image {
+.profile-image {
     width: 18vw;
     height: 25vw;
     border-radius: 25px;
@@ -572,4 +574,63 @@ body {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
+}
+.p{
+    font-size: 1.6rem;
+    width: 90%;
+    margin-left: 10px;
+    line-height: 2.5rem;
+}
+.resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #0056b3;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-link {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #0056b3;
+}
+
+.github::before {
+    margin-right: 5px;
+}
+
+.linkedin::before {
+    margin-right: 5px;
+}
+
+.rotate-section {
+    transition: 3s ease;
+    transform: rotateY(360deg);
+}
+
+.footer {
+    width: 60% !important;
+    height: 60% !important;
+    padding: 0 !important;
+    align-items: center;
+
 }

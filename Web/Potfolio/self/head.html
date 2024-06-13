@@ -9,30 +9,26 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        
+    </style>
 </head>
 
 <body class="wrapper">
     <div class="main-container">
         <div class="header">
-            <div class="logo">Gpp Hostel <span class="logo-det"># Boys</span>
+            <div class="logo">Tejas
             </div>
-            <a class="header-link active" href="#">Dashboard</a>
-            <a class="header-link" href="#">Home</a>
-            <a class="header-link" href="#">About us</a>
-            <a class="header-link" href="#">Committee</a>
-            <div class="user-info">
-                <div class="a">
-                    <div class="b">
-                        <div class="user-name">Mike J</div>
-                    </div>
-                    <div class="log_out">Log Out</div>
-                </div>
-                <div class="hour">08.20 pm</div>
-            </div>
+            <a class="header-link" href="#about">About</a>
+            <a class="header-link" href="#project">Projects</a>
+            <a class="header-link" href="#skill">Skills</a>
+            <a class="header-link" href="#know">Know more</a>
+            <a class="header-link" href="#contact">Contact Me</a>
+
         </div>
         <!-- Portfolio Section -->
         <!-- About Section -->
-        <div class="user-box first-box activity card about">
+        <div class="user-box first-box section activity card about" id="about">
             <div class="content-wrapper">
                 <div class="text-content">
                     <div class="typing-container">
@@ -49,7 +45,7 @@
             </div>
         </div>
         <!-- Projects Section -->
-        <div class="user-box first-box activity card project-section">
+        <div class="user-box first-box section activity card project-section" id="project">
             <h1>Projects</h1>
             <!-- Add more project entries as needed -->
             <div class="project-container">
@@ -80,7 +76,7 @@
                 <div class="project-card">
                     <img src="project-3.png" class="project-img" alt="">
                     <div class="project-content">
-                        <h1 class="project-title">project 01</h1>
+                        <h1 class="project-title">project 03</h1>
                         <p class="project-info"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae
                             delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt? </p>
                         <div class="project-btn-grp">
@@ -92,7 +88,7 @@
                 <div class="project-card">
                     <img src="project-4.png" class="project-img" alt="">
                     <div class="project-content">
-                        <h1 class="project-title">project 02</h1>
+                        <h1 class="project-title">project 04</h1>
                         <p class="project-info"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae
                             delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt? </p>
                         <div class="project-btn-grp">
@@ -104,12 +100,12 @@
             </div>
         </div>
         <!-- Skills Section -->
-        <div class="user-box first-box activity card">
+        <div class="user-box first-box section activity card" id="skill">
             <h1>Skills</h1>
             <div class="s_con">
                 <div class="parent-skill">
                     <div class="skill">
-                        <div class="progress" data-progress="80">
+                        <div class="progress" data-progress="100">
                             <span class="progress-number">0%</span>
                         </div>
                     </div>
@@ -133,14 +129,51 @@
                 </div>
             </div>
         </div>
+
+        <div class="user-box first-box section activity card" id="know">
+            <h1>Know More about me</h1>
+            <div class="content-wrapper">
+                <div>
+                    <p class="p">I am a dynamic and enthusiastic individual with a rich blend of leadership, technical
+                        expertise, and a passion for continuous learning. My journey includes organizing high-energy
+                        hackathons with CodeDay, where I thrived in managing logistics, solving real-time challenges,
+                        and
+                        inspiring over 250 participants. As Fire House Captain at Wisdom High International School, I
+                        sharpened my crisis management and teamwork skills, ensuring safety and unity. Academically, I
+                        am
+                        pursuing a Diploma in Computer Engineering at Government Polytechnic Pune, complemented by a
+                        suite
+                        of certifications in programming, communication, and leadership. My achievements also extend to
+                        sports, having led my team to victory in the district-level table tennis competition. Eager to
+                        innovate and inspire, I bring dedication and a proactive mindset to every endeavor.</p>
+                    <a href="path/to/your/resume.pdf" download class="resume-button">Download My Resume</a>
+                </div>
+
+
+                <div>
+
+
+                    <img src="tejas.jpg" alt="Tejas" class="profile-image" />
+                    <div class="social-links">
+                        <a href="https://github.com/yourusername" target="_blank" class="social-link github">GitHub</a>
+                        <a href="https://www.linkedin.com/in/yourusername" target="_blank"
+                            class="social-link linkedin">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Contact Section -->
-        <div class="user-box first-box activity card">
+        <div class="user-box first-box activity card" id="contact">
             <h1>Contact Me</h1>
             <iframe webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" scrolling="no"
                 src="https://forms.visme.co/formsPlayer/_embed/rx9w4xxo-contact-us?embedIframeId=1" title="Contact us"
                 loading="lazy" class="vismeForms"
                 style="border: none; max-width: 100%; display: flex; justify-content: center; align-items: center; min-height: 507.808px;"></iframe>
             <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+        </div>
+        <div class="user-box first-box activity card footer">
+            <h4>Created By Tejas Patil | <stromg style="font-size: 25px; font-weight: 1000;">©</stromg> 2024 All rights
+                reserved.</h4>
         </div>
     </div>
 </body>
@@ -161,7 +194,7 @@
         const progress = document.querySelectorAll('.progress');
         let count = 0;
         // You must put the maximum number in the MAX variable.
-        let MAX = 80;
+        let MAX = 100;
         let run = setInterval(() => {
             count++;
             progress.forEach(element => {
@@ -176,6 +209,54 @@
         }, 20);
     }
     progressBarAndCountNumber();
+    const headerLinks = document.querySelectorAll('.header-link');
+
+    // Add event listener to each header link
+    headerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Remove active class from all links
+            headerLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add active class to the clicked link
+            link.classList.add('active');
+        });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.header-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+
+                    // Rotate the section that is in view
+                    sections.forEach(section => {
+                        section.classList.remove('rotate-section');
+                    });
+                    entry.target.classList.add('rotate-section');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
 </script>
+
 
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
@@ -9,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body class="wrapper">
     <div id="loader-wrapper">
         <div id="loader"></div>
@@ -193,6 +195,11 @@
     <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            //Function to pasue the script
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
             // Options for the typed.js
             var options = {
                 strings: ["Developer", "Student", "Designer", "GDSC Member"],
@@ -204,7 +211,8 @@
             var typed = new Typed("#typed-text", options);
 
             // Function for progress bar and count number animation
-            function progressBarAndCountNumber() {
+            async function progressBarAndCountNumber() {
+                await sleep(2500);
                 const progress = document.querySelectorAll('.progress');
                 let count = 0;
                 let MAX = 100;
@@ -222,7 +230,7 @@
                 }, 20);
             }
 
-            progressBarAndCountNumber();
+
 
             // Adding active class to header links on click
             const headerLinks = document.querySelectorAll('.header-link');
@@ -250,6 +258,9 @@
                             link.classList.remove('active');
                             if (link.getAttribute('href').substring(1) === entry.target.id) {
                                 link.classList.add('active');
+                                if (link.getAttribute('href').substring(1) === "skill") {
+                                    progressBarAndCountNumber();
+                                }
                             }
                         });
                         sections.forEach(section => {
@@ -270,4 +281,5 @@
         });
     </script>
 </body>
+
 </html>

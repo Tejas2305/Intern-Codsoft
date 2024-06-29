@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 
 <body class="wrapper">
@@ -194,91 +194,85 @@
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            //Function to pasue the script
-            function sleep(ms) {
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
+document.addEventListener('DOMContentLoaded', function () {
+    //Function to pause the script
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
-            // Options for the typed.js
-            var options = {
-                strings: ["Developer", "Student", "Designer", "GDSC Member"],
-                typeSpeed: 80,
-                backSpeed: 80,
-                backDelay: 1000,
-                loop: true
-            };
-            var typed = new Typed("#typed-text", options);
+    // Options for the typed.js
+    var options = {
+        strings: ["Developer", "Student", "Designer", "GDSC Member"],
+        typeSpeed: 80,
+        backSpeed: 80,
+        backDelay: 1000,
+        loop: true
+    };
+    var typed = new Typed("#typed-text", options);
 
-            // Function for progress bar and count number animation
-            async function progressBarAndCountNumber() {
-                await sleep(2500);
-                const progress = document.querySelectorAll('.progress');
-                let count = 0;
-                let MAX = 100;
-                let run = setInterval(() => {
-                    count++;
-                    progress.forEach(element => {
-                        if (count <= element.dataset.progress) {
-                            element.parentElement.style.background = `conic-gradient(#f9004d ${count}%, #212428 0)`;
-                            element.firstElementChild.textContent = `${count}%`;
-                        }
-                        if (count == MAX) {
-                            clearInterval(run);
-                        }
-                    });
-                }, 20);
-            }
-
-
-
-            // Adding active class to header links on click
-            const headerLinks = document.querySelectorAll('.header-link');
-            headerLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    headerLinks.forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    link.classList.add('active');
-                });
+    // Function for progress bar and count number animation
+    async function progressBarAndCountNumber() {
+        await sleep(2500);
+        const progress = document.querySelectorAll('.progress');
+        let count = 0;
+        let MAX = 100;
+        let run = setInterval(() => {
+            count++;
+            progress.forEach(element => {
+                if (count <= element.dataset.progress) {
+                    element.parentElement.style.background = `conic-gradient(#f9004d ${count}%, #212428 0)`;
+                    element.firstElementChild.textContent = `${count}%`;
+                }
+                if (count == MAX) {
+                    clearInterval(run);
+                }
             });
+        }, 20);
+    }
 
-            // IntersectionObserver for sections
-            const sections = document.querySelectorAll('.section');
-            const navLinks = document.querySelectorAll('.header-link');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.5
-            };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href').substring(1) === entry.target.id) {
-                                link.classList.add('active');
-                                if (link.getAttribute('href').substring(1) === "skill") {
-                                    progressBarAndCountNumber();
-                                }
-                            }
-                        });
-                        sections.forEach(section => {
-                            section.classList.remove('rotate-section');
-                        });
-                        entry.target.classList.add('rotate-section');
+    // Adding active class to header links on click
+    const headerLinks = document.querySelectorAll('.header-link');
+    headerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            headerLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            link.classList.add('active');
+        });
+    });
+
+    // IntersectionObserver for sections
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.header-link');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === entry.target.id) {
+                        link.classList.add('active');
+                        if (link.getAttribute('href').substring(1) === "skill") {
+                            progressBarAndCountNumber();
+                        }
                     }
                 });
-            }, observerOptions);
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-            // Simulate a loaded state after 1 seconds
-            setTimeout(function () {
-                document.body.classList.add('loaded');
-            }, 1000);
+            }
         });
+    }, observerOptions);
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Simulate a loaded state after 1 seconds
+    setTimeout(function () {
+        document.body.classList.add('loaded');
+    }, 1000);
+});
     </script>
 </body>
 

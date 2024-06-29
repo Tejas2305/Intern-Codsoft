@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="wrapper">
@@ -20,7 +20,7 @@
 
     <div class="main-container" id="content">
         <div class="header">
-            <!-- Header with navigation links -->
+
             <div class="logo">Tejas</div>
             <a class="header-link" href="#about">About</a>
             <a class="header-link" href="#project">Projects</a>
@@ -29,12 +29,12 @@
             <a class="header-link" href="#contact">Contact Me</a>
         </div>
 
-        <!-- About Section -->
+
         <div class="user-box first-box section activity card about" id="about">
             <div class="content-wrapper">
                 <div class="text-content">
                     <div class="typing-container">
-                        <!-- Typed.js for dynamic typing effect -->
+
                         <h1 class="static-text">Hello, I Am Tejas <br>I am a </h1>
                         <h2 class="static-text" id="typed-text"></h2>
                     </div>
@@ -48,10 +48,10 @@
             </div>
         </div>
 
-        <!-- Projects Section -->
+
         <div class="user-box first-box section activity card project-section" id="project">
             <h1>Projects</h1>
-            <!-- Project cards -->
+
             <div class="project-container">
                 <div class="project-card">
                     <img src="img/project-1.png" class="project-img" alt="">
@@ -101,14 +101,14 @@
                         </div>
                     </div>
                 </div>
-                <!-- Additional project cards can be added similarly -->
+
             </div>
         </div>
 
-        <!-- Skills Section -->
+
         <div class="user-box first-box section activity card" id="skill">
             <h1>Skills</h1>
-            <!-- Skill progress bars -->
+
             <div class="s_con">
                 <div class="parent-skill">
                     <div class="skill">
@@ -142,11 +142,11 @@
                     </div>
                     <span class="title">CSS</span>
                 </div>
-                <!-- Additional skills can be added similarly -->
+
             </div>
         </div>
 
-        <!-- More About Me Section -->
+
         <div class="user-box first-box section activity card" id="know">
             <h1>Know More about me</h1>
             <div class="content-wrapper">
@@ -164,7 +164,7 @@
                 </div>
                 <div>
                     <img src="img/tejas.jpg" alt="Tejas" class="profile-image" />
-                    <!-- Social links -->
+
                     <div class="social-links">
                         <a href="https://github.com/Tejas2305" target="_blank" class="social-link github">GitHub</a>
                         <a href="https://www.linkedin.com/in/tejas-patil23" target="_blank"
@@ -174,10 +174,10 @@
             </div>
         </div>
 
-        <!-- Contact Section -->
+
         <div class="user-box first-box activity card section" id="contact">
             <h1>Contact Me</h1>
-            <!-- Embedded contact form -->
+
             <iframe webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" scrolling="no"
                 src="https://forms.visme.co/formsPlayer/_embed/rx9w4xxo-contact-us?embedIframeId=1" title="Contact us"
                 loading="lazy" class="vismeForms"
@@ -185,95 +185,15 @@
             <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
         </div>
 
-        <!-- Footer Section -->
+
         <div class="user-box first-box activity card footer">
             <h4>Created By Tejas Patil | <strong style="font-size: 25px; font-weight: 1000;">©</strong> 2024 All rights
                 reserved.</h4>
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-    //Function to pause the script
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
 
-    // Options for the typed.js
-    var options = {
-        strings: ["Developer", "Student", "Designer", "GDSC Member"],
-        typeSpeed: 80,
-        backSpeed: 80,
-        backDelay: 1000,
-        loop: true
-    };
-    var typed = new Typed("#typed-text", options);
-
-    // Function for progress bar and count number animation
-    async function progressBarAndCountNumber() {
-        await sleep(2500);
-        const progress = document.querySelectorAll('.progress');
-        let count = 0;
-        let MAX = 100;
-        let run = setInterval(() => {
-            count++;
-            progress.forEach(element => {
-                if (count <= element.dataset.progress) {
-                    element.parentElement.style.background = `conic-gradient(#f9004d ${count}%, #212428 0)`;
-                    element.firstElementChild.textContent = `${count}%`;
-                }
-                if (count == MAX) {
-                    clearInterval(run);
-                }
-            });
-        }, 20);
-    }
-
-    // Adding active class to header links on click
-    const headerLinks = document.querySelectorAll('.header-link');
-    headerLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            headerLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-            link.classList.add('active');
-        });
-    });
-
-    // IntersectionObserver for sections
-    const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('.header-link');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5
-    };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === entry.target.id) {
-                        link.classList.add('active');
-                        if (link.getAttribute('href').substring(1) === "skill") {
-                            progressBarAndCountNumber();
-                        }
-                    }
-                });
-            }
-        });
-    }, observerOptions);
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // Simulate a loaded state after 1 seconds
-    setTimeout(function () {
-        document.body.classList.add('loaded');
-    }, 1000);
-});
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
